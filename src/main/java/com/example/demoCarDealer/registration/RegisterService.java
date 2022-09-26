@@ -19,7 +19,7 @@ public class RegisterService {
     public String register (RegisterRequest request){
         boolean emailIsValid = emailValidator.test(request.getEmail());
         if (!emailIsValid){
-            throw new IllegalStateException("Email is not exist");
+            throw new IllegalStateException("Email is not exist.");
         }
         return appUserservice.signUpUser(new AppUser(
                 request.getFirstNameOfDealer(),
