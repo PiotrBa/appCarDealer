@@ -26,7 +26,7 @@ public class AppUserservice implements UserDetailsService {
     public String signUpUser (AppUser appUser){
         boolean emailIsExist = appUserRepository.findByEmail(appUser.getEmail()).isPresent();
         if (emailIsExist){
-            throw new IllegalStateException("Email is already taken");
+            throw new IllegalStateException("Email is already taken!");
         }
         String encoderPassword = bCryptPasswordEncoder.encode(appUser.getPassword());
         appUser.setPassword(encoderPassword);

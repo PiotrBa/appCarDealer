@@ -27,7 +27,7 @@ public class WebSecurityConfig {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/used/v*/**")
+                .antMatchers("/used/V*/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated().and()
